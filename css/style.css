@@ -985,4 +985,66 @@ nav { display: flex; align-items: center; }
 .carrinho-lista::-webkit-scrollbar-thumb {
   background: var(--laranja-claro);
   border-radius: 99px;
+
+   /* =========================================
+   FIX MOBILE - TELA MEXENDO
+   ========================================= */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Corrige viewport no celular */
+.hero {
+  min-height: 90dvh !important;
+  height: auto !important;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Corrige painel do carrinho */
+.carrinho-painel {
+  min-height: 100dvh;
+  height: 100dvh;
+  max-width: 100%;
+}
+
+/* Corrige imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Corrige iframe do mapa */
+#mapas {
+  width: 100% !important;
+  max-width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Evita elementos ultrapassarem largura */
+section,
+div,
+main,
+header,
+footer {
+  max-width: 100%;
+}
+
+/* Corrige scroll lateral no Android */
+body {
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+/* Remove highlight azul ao tocar */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+   
 }
