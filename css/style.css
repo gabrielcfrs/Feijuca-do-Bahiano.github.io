@@ -985,128 +985,8 @@ nav { display: flex; align-items: center; }
 .carrinho-lista::-webkit-scrollbar-thumb {
   background: var(--laranja-claro);
   border-radius: 99px;
-
-   /* =========================================
-   FIX MOBILE - TELA MEXENDO
-   ========================================= */
-
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
 }
-
-/* Corrige viewport no celular */
-.hero {
-  min-height: 90dvh !important;
-  height: auto !important;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Corrige painel do carrinho */
-.carrinho-painel {
-  min-height: 100dvh;
-  height: 100dvh;
-  max-width: 100%;
-}
-
-/* Corrige imagens */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Corrige iframe do mapa */
-#mapas {
-  width: 100% !important;
-  max-width: 100%;
-  border-radius: 16px;
-  display: block;
-}
-
-/* Evita elementos ultrapassarem largura */
-section,
-div,
-main,
-header,
-footer {
-  max-width: 100%;
-}
-
-/* Corrige scroll lateral no Android */
-body {
-  overscroll-behavior-x: none;
-  touch-action: pan-y;
-}
-
-/* Remove highlight azul ao tocar */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-   /* =========================================
-   FIX MOBILE - TELA MEXENDO
-   ========================================= */
-
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* Corrige viewport no celular */
-.hero {
-  min-height: 90dvh !important;
-  height: auto !important;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Corrige painel do carrinho */
-.carrinho-painel {
-  min-height: 100dvh;
-  height: 100dvh;
-  max-width: 100%;
-}
-
-/* Corrige imagens */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Corrige iframe do mapa */
-#mapas {
-  width: 100% !important;
-  max-width: 100%;
-  border-radius: 16px;
-  display: block;
-}
-
-/* Evita elementos ultrapassarem largura */
-section,
-div,
-main,
-header,
-footer {
-  max-width: 100%;
-}
-
-/* Corrige scroll lateral no Android */
-body {
-  overscroll-behavior-x: none;
-  touch-action: pan-y;
-}
-
-/* Remove highlight azul ao tocar */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
+  
    
 /* =============================================
    RESPONSIVO - CELULAR
@@ -1232,38 +1112,134 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-   /* =========================================
-   FIX MAPA MOBILE - TELA TRAVADA
-   ========================================= */
+/* =========================================
+   FIX MOBILE FINAL
+========================================= */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* Corrige imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  overflow: hidden;
+  min-height: 90dvh;
+}
+
+/* Carrinho */
+.carrinho-painel {
+  width: 100%;
+  max-width: 100%;
+  height: 100dvh;
+}
+
+/* Containers */
+section,
+div,
+main,
+header,
+footer,
+.container {
+  max-width: 100%;
+}
+
+/* Remove scroll lateral */
+body {
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+/* Remove highlight azul */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   MAPA MOBILE
+========================================= */
 
 #mapas {
   width: 100% !important;
   max-width: 100% !important;
-  height: 300px;
+  height: 260px;
   border: 0;
   border-radius: 16px;
   display: block;
 }
 
-/* Impede qualquer scroll lateral */
-html,
-body {
-  overflow-x: hidden !important;
-  width: 100%;
-}
-
-/* Garante que nada ultrapasse a tela */
-.contato-info,
-.info-item,
-.container,
-.contato-grid {
-  width: 100%;
-  max-width: 100%;
-}
-
-/* Corrige bug do iframe no Android */
+/* Corrige iframe */
 iframe {
   max-width: 100% !important;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero-logo-flutuante {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .sobre-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sobre-badge {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--marrom-escuro);
+    padding: 20px;
+    gap: 15px;
+    z-index: 999;
+  }
+
+  .nav-list.aberto {
+    display: flex;
+  }
+
+  .carrinho-fab {
+    bottom: 18px;
+    right: 18px;
+  }
+
+  #mapas {
+    height: 220px;
+  }
 }
    
 }
