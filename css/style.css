@@ -1108,5 +1108,162 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
    
+/* =============================================
+   RESPONSIVO - CELULAR
+   (regras que entram em telas menores que 768px)
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Esconde logo flutuante no celular */
+  .hero-logo-flutuante {
+    display: none;
+  }
+
+  /* Título menor */
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  /* Mostra o botão hambúrguer */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Esconde o menu inicialmente no celular */
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: var(--sombra);
+    gap: 15px;
+    z-index: 999;
+  }
+
+  /* Quando o menu estiver aberto, mostra */
+  .nav-list.aberto {
+    display: flex;
+  }
+
+  /* Seção sobre: uma coluna */
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sobre-badge {
+    display: none;
+  }
+
+  .sobre-numeros {
+    gap: 15px;
+  }
+
+  /* Contato: uma coluna */
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .banner-content h2 {
+    font-size: 1.8rem;
+  }
+
+   
+/* =========================================
+   FIX MOBILE - TELA MEXENDO
+   ========================================= */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Corrige viewport no celular */
+.hero {
+  min-height: 90dvh !important;
+  height: auto !important;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Corrige painel do carrinho */
+.carrinho-painel {
+  min-height: 100dvh;
+  height: 100dvh;
+  max-width: 100%;
+}
+
+/* Corrige imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Evita elementos ultrapassarem largura */
+section,
+div,
+main,
+header,
+footer {
+  max-width: 100%;
+}
+
+/* Corrige scroll lateral no Android */
+body {
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+/* Remove highlight azul ao tocar */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+   /* =========================================
+   FIX MAPA MOBILE - TELA TRAVADA
+   ========================================= */
+
+#mapas {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 300px;
+  border: 0;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Impede qualquer scroll lateral */
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+/* Garante que nada ultrapasse a tela */
+.contato-info,
+.info-item,
+.container,
+.contato-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Corrige bug do iframe no Android */
+iframe {
+  max-width: 100% !important;
+}
    
 }
